@@ -28,3 +28,25 @@ archives:
       - LICENSE
 source:
   rlcp: true
+
+krews:
+  - name: kubectl-janitor
+    homepage: https://github.com/thiagoalmeidasa/kubectl-janitor
+    caveats: Lists objects in a problematic state
+    short_description: Lists objects in a problematic state
+    description: |
+      Troubleshooting Kubernetes clusters sometimes requires
+      a combination of kubectl commands and other command-line tools
+      such as jq to do correlations around the issues that the various
+      objects might have. Moreover, sometimes the supported options
+      of the --field-selector flag might be limited as well.
+      This plugin assists in finding Kubernetes objects in a problematic state.
+      It currently supports Job, Pod, PersistentVolume,
+      and PersistentVolumeClaim resources.
+
+    # Setting this will prevent goreleaser to actually try to commit the updated
+    # krew plugin - instead, the plugin file will be stored on the dist folder
+    # only, leaving the responsibility of publishing it to the user.
+    # If set to auto, the release will not be uploaded to the Krew plugin
+    # in case there is an indicator for prerelease in the tag e.g. v1.0.0-rc1
+    skip_upload: true
