@@ -2,7 +2,11 @@
 name: ci
 on:
   push:
+    branches:
+      - "*"
   pull_request:
+    branches:
+      - main
 jobs:
   goreleaser:
     runs-on: ubuntu-latest
