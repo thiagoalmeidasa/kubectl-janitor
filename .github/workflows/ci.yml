@@ -5,7 +5,7 @@ on:  # yamllint disable-line rule:truthy
     branches:
       - main
 jobs:
-  goreleaser:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
