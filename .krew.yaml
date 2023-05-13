@@ -1,3 +1,4 @@
+---
 apiVersion: krew.googlecontainertools.github.com/v1alpha2
 kind: Plugin
 metadata:
@@ -16,21 +17,27 @@ spec:
     It currently supports Job, Pod, PersistentVolume,
     and PersistentVolumeClaim resources.
   platforms:
-  - selector:
-      matchLabels:
-        os: darwin
-        arch: amd64
-    {{addURIAndSha "https://github.com/dastergon/kubectl-janitor/releases/download/{{ .TagName }}/kubectl-janitor_{{ .TagName }}_darwin_amd64.tar.gz" .TagName }}
-    bin: kubectl-janitor
-  - selector:
-      matchLabels:
-        os: linux
-        arch: amd64
-    {{addURIAndSha "https://github.com/dastergon/kubectl-janitor/releases/download/{{ .TagName }}/kubectl-janitor_{{ .TagName }}_linux_amd64.tar.gz" .TagName }}
-    bin: kubectl-janitor
-  - selector:
-      matchLabels:
-        os: windows
-        arch: amd64
-    {{addURIAndSha "https://github.com/dastergon/kubectl-janitor/releases/download/{{ .TagName }}/kubectl-janitor_{{ .TagName }}_windows_amd64.tar.gz" .TagName }}
-    bin: kubectl-janitor.exe
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: amd64
+      {{addURIAndSha "https://github.com/dastergon/kubectl-janitor/releases/download/{{ .TagName }}/kubectl-janitor_{{ .TagName }}_darwin_amd64.tar.gz" .TagName }}
+      bin: kubectl-janitor
+    - selector:
+        matchLabels:
+          os: darwin
+          arch: arm64
+      {{addURIAndSha "https://github.com/dastergon/kubectl-janitor/releases/download/{{ .TagName }}/kubectl-janitor_{{ .TagName }}_darwin_arm64.tar.gz" .TagName }}
+      bin: kubectl-janitor
+    - selector:
+        matchLabels:
+          os: linux
+          arch: amd64
+      {{addURIAndSha "https://github.com/dastergon/kubectl-janitor/releases/download/{{ .TagName }}/kubectl-janitor_{{ .TagName }}_linux_amd64.tar.gz" .TagName }}
+      bin: kubectl-janitor
+    - selector:
+        matchLabels:
+          os: windows
+          arch: amd64
+      {{addURIAndSha "https://github.com/dastergon/kubectl-janitor/releases/download/{{ .TagName }}/kubectl-janitor_{{ .TagName }}_windows_amd64.tar.gz" .TagName }}
+      bin: kubectl-janitor.exe
