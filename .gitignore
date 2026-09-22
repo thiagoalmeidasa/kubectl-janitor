@@ -2,3 +2,6 @@
 dist/
 /kubectl-janitor
 /cmd/kubectl-janitor
+.codex/
+AGENTS.md
+graphify-out/
